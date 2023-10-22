@@ -11,11 +11,14 @@ ABallPawn::ABallPawn()
  	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+    SphereCollider = CreateDefaultSubobject<USphereComponent>(TEXT("SphereCollider"));
+    SphereCollider->SetSimulatePhysics(true);
+	RootComponent = SphereCollider;
+
     // Initialize the ball mesh and set it as the root component
     BallMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("BallMesh"));
     BallMesh->SetupAttachment(RootComponent);
     BallMesh->SetSimulatePhysics(true); // Enable physics simulation
-    RootComponent = BallMesh;
 
 	// Create the SpringArm component
     CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));

@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Camera/CameraComponent.h"
+#include "Components/SphereComponent.h"
 #include "GameFramework/Pawn.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "BallPawn.generated.h"
@@ -46,6 +47,9 @@ private:
 
 	UPROPERTY(EditAnywhere, Category = Camera)
 	UCameraComponent* FollowCamera;
+
+	UPROPERTY(EditAnywhere)
+	USphereComponent* SphereCollider;
 
 	FVector ForceToAdd{ 0,0,0 };
 };
