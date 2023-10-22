@@ -41,9 +41,11 @@ private:
 	UPROPERTY(EditAnywhere, Category = "Movement")
 	float InertiaFactor = 0.5f;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(EditAnywhere, Category = Camera)
 	USpringArmComponent* CameraBoom;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(EditAnywhere, Category = Camera)
 	UCameraComponent* FollowCamera;
+
+	FVector ForceToAdd{ 0,0,0 };
 };

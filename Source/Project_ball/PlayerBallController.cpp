@@ -8,7 +8,9 @@ void APlayerBallController::BeginPlay()
     ControlledBall = Cast<ABallPawn>(GetPawn());
     if (!ControlledBall)
     {
-        UE_LOG(LogTemp, Warning, TEXT("BallPlayerController not possessing a BallController pawn"));
+        UE_LOG(LogTemp, Warning, TEXT("BallPlayerController not possessing BallPawn"));
+    } else {
+        UE_LOG(LogTemp, Log, TEXT("BallPlayerController connected to BallPawn"));
     }
 }
 
